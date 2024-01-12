@@ -3,7 +3,6 @@ import {
   FieldsErrors,
   ValidatorFieldsInterface,
 } from './validator-fields.interface'
-import { group } from 'console'
 
 export abstract class ClassValidatorFields<PropsValidated>
   implements ValidatorFieldsInterface<PropsValidated>
@@ -22,6 +21,8 @@ export abstract class ClassValidatorFields<PropsValidated>
     } else {
       this.validatedData = data
     }
+    console.log(errors.length)
+
     return !errors.length
   }
 }
