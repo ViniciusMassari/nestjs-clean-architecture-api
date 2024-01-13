@@ -21,8 +21,6 @@ export abstract class ClassValidatorFields<PropsValidated>
     } else {
       this.validatedData = data
     }
-    console.log(errors.length)
-
     return !errors.length
   }
 }
