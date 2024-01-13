@@ -1,6 +1,6 @@
 import { Entity } from '../entities/entity'
 import { RepositoryInterface } from './repository-contracts'
-import { NotFoundError } from '../errors/no-found-error'
+import { NotFoundError } from '../errors/not-found-error'
 
 export abstract class InMemoryRepository<E extends Entity>
   implements RepositoryInterface<E>
@@ -12,7 +12,7 @@ export abstract class InMemoryRepository<E extends Entity>
     return
   }
 
-  async findyById(id: string): Promise<E> {
+  async findById(id: string): Promise<E> {
     return this._getEntity(id)
   }
   async findAll(): Promise<E[]> {
