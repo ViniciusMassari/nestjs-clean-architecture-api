@@ -13,7 +13,7 @@ export class UserInMemoryRepository
   async findByEmail(email: string): Promise<UserEntity> {
     const entity = this.items.find(entity => entity.email === email)
     if (!entity) {
-      throw new ConflictError(`Entity not found using email: ${email}`)
+      throw new ConflictError(`Entity not found using email ${email}`)
     }
     return entity
   }
