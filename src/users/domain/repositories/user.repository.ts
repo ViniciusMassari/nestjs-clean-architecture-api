@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-import { RepositoryInterface } from '@/shared/domain/repositories/repository-contracts'
 import { UserEntity } from '../entities/user.entity'
 import {
   SearchParams as DefaultSearchParams,

@@ -14,9 +14,6 @@ export namespace GetUserUseCase {
     constructor(private userRepository: UserRepository.Repository) {}
     async execute(input: Input): Promise<Output> {
       const entity = await this.userRepository.findById(input.id)
-      if (!entity) {
-        throw new NotFoundError('user not found')
-      }
       return entity.toJSON()
     }
   }
