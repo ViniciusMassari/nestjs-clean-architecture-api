@@ -1,19 +1,14 @@
 import { UserRepository } from '@/users/domain/repositories/user.repository'
 import { BadRequestError } from '../errors/bad-request-error'
 import { NotFoundError } from '@/shared/domain/errors/not-found-error'
+import { UserOutput } from '../dtos/user-output'
 
 export namespace GetUserUseCase {
   export interface Input {
     id: string
   }
 
-  export interface Output {
-    id: string
-    name: string
-    email: string
-    password: string
-    createdAt: Date
-  }
+  export type Output = UserOutput
 
   export class UseCase {
     constructor(private userRepository: UserRepository.Repository) {}
