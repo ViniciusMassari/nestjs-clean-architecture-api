@@ -1,7 +1,7 @@
 import { UserRepository } from '@/users/domain/repositories/user.repository'
 import { BadRequestError } from '../errors/bad-request-error'
 import { UserEntity } from '@/users/domain/entities/user.entity'
-import { hashProvider } from '@/shared/application/providers/hash-provider'
+import { HashProvider } from '@/shared/application/providers/hash-provider'
 
 export namespace SignupUseCase {
   export interface Input {
@@ -21,7 +21,7 @@ export namespace SignupUseCase {
   export class UseCase {
     constructor(
       private userRepository: UserRepository.Repository,
-      private hashProvider: hashProvider,
+      private hashProvider: HashProvider,
     ) {}
     async execute(input: Input): Promise<Output> {
       const { email, name, password } = input
